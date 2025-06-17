@@ -5,7 +5,7 @@ const client = new OpenAI({
 	apiKey: "open-ai", // This can be any string with Ollama
 });
 
-async function run(): any {
+async function run(){
  try {
   const response = await client.chat.completions.create({
    model: "gemma3:4b",
