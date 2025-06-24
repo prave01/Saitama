@@ -4,6 +4,8 @@ import * as readline from "readline";
 
 const history = new InMemoryChatMessageHistory();
 
+// this is from prave-main branch
+
 history.addAIMessage(
 	"You are a useful assistant for physics and learning it ,, give the response always in json format",
 );
