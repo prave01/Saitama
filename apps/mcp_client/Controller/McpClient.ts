@@ -8,9 +8,14 @@ class McpClient {
 
 	constructor(server_url?: URL) {
 		this.server_url = server_url || new URL("http://localhost:8080/sse");
-		this.client = new Client({ name: "test", title: "", version: "" });
+		this.client = new Client({
+			name: "test",
+			title: "",
+			version: "",
+		});
 	}
 
+	// Function to connect with server
 	async connectServer() {
 		if (!this.server_url) return "Server url not provided";
 		try {
@@ -21,7 +26,11 @@ class McpClient {
 			console.error("Error connecting to server:", err);
 		}
 	}
+
+	sample() {}
 }
 
 const mcp = new McpClient();
 await mcp.connectServer();
+
+console.log(await mcp.client.listTools());
