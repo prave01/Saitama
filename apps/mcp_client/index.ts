@@ -51,3 +51,5 @@ while (true) {
 
   //console.log(`AI: ${aiResponse}`);
 }
+
+export * from "./Controller/McpClient"
