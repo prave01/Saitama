@@ -5,14 +5,14 @@ import chalk from "chalk";
 class McpClient {
 	private server_url: URL;
 	public client: Client;
-
-	constructor(server_url?: URL) {
+	constructor(
+		server_url?: URL,
+		name: string = "",
+		version: string = "",
+		title: string = "",
+	) {
 		this.server_url = server_url || new URL("http://localhost:8080/sse");
-		this.client = new Client({
-			name: "test",
-			title: "",
-			version: "",
-		});
+		this.client = new Client({ name, title, version });
 	}
 
 	// Function to connect with server
@@ -21,16 +21,14 @@ class McpClient {
 		try {
 			const transport = new SSEClientTransport(this.server_url);
 			await this.client.connect(transport);
+
 			console.log(chalk.magenta(`Server connected at ${this.server_url}`));
+
+			this.client.listTools({ _meta: { progressToken: "12345" } });
 		} catch (err) {
 			console.error("Error connecting to server:", err);
 		}
 	}
-
-	sample() {}
 }
-
 const mcp = new McpClient();
 await mcp.connectServer();
-
-console.log(await mcp.client.listTools());
