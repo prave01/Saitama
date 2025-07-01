@@ -1,7 +1,7 @@
 {
   "name": "api",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "wrangler dev ./src/index.ts"
   },
   "dependencies": {
     "hono": "^4.8.3"
