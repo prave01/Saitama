@@ -22,6 +22,7 @@ class McpClient {
 			const transport = new SSEClientTransport(this.server_url);
 			await this.client.connect(transport);
 
+
 			console.log(chalk.magenta(`Server connected at ${this.server_url}`));
 
 			this.client.listTools({ _meta: { progressToken: "12345" } });

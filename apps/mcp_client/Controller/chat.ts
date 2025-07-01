@@ -13,7 +13,8 @@ export default class LLM_Client extends Ollama {
 
 	constructor(ollama_url: string, model: string, purpose: string) {
 		super({ baseUrl: ollama_url, model });
-		this.purpose = purpose;
+
+    this.purpose = purpose;
 	}
 
 	async runLLM(args: LLMArgs) {
