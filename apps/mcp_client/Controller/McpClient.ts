@@ -15,6 +15,7 @@ export class McpClient {
     this.client = new Client({ name, title, version });
   }
 
+
   // Function to connect with server
   async connectServer() {
     if (!this.server_url) return "Server url not provided";

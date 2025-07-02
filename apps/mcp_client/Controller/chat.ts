@@ -26,6 +26,7 @@ export default class LLM_Client extends Ollama {
         if (args.log) {
           console.log(response);
         }
+
         return { Response: response };
       }
 
