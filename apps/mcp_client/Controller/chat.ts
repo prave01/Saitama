@@ -11,6 +11,7 @@ type LLMArgs = {
 export default class LLM_Client extends Ollama {
   public purpose: string;
 
+
   constructor(ollama_url: string, model: string, purpose: string) {
     super({ baseUrl: ollama_url, model });
 
